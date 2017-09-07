@@ -9,3 +9,4 @@ countList = [aCount, bCount, cCount]
 countList.sort()
 
 print(countList)
+

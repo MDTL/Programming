@@ -1,6 +1,6 @@
-cijferICOR = 6.0
+cijferICOR = 6.5
 cijferPROG = 7.5
-cijferCSN = 6.5
+cijferCSN = 6.0
 
 gemiddelde = round((cijferICOR + cijferPROG + cijferCSN) / 3, 2)
 

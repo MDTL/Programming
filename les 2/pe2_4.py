@@ -6,3 +6,4 @@ salaris = uurLoon * aantalUur
 salarisString = str(aantalUur) + " uur werken levert €" + str(salaris) + " euro op"
 
 print(salarisString)
+
