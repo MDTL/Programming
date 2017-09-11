@@ -1,8 +1,6 @@
 def som(list):
-    return sum(list);
+    print(sum(list))
 
-getallen = [1, 2, 3, 4, 5]
+getallen = [1, 2, 3]
 
-result = som(getallen)
-
-print(result)
+som(getallen)
