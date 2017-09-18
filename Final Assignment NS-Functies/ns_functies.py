@@ -14,6 +14,7 @@ def standaardPrijs(afstandKM):
     return round(tarief, 2)
 
 def ritPrijs(leeftijd, weekendrit, afstandKM):
+
     sPrijs = standaardPrijs(afstandKM)
 
     if weekendrit == False:
@@ -29,4 +30,4 @@ def ritPrijs(leeftijd, weekendrit, afstandKM):
 
     return round(prijs, 2)
 
-print(ritPrijs(66, True, 20))
+print(ritPrijs(64, False, 0))
