@@ -1,9 +1,9 @@
 with open("kaartnummers.txt", "r") as f:
     data = f.readlines()
 
-    lineCount = len(data)
+    lineCount = str(len(data))
 
-    print('Deze file telt ' + str(lineCount) + ' regels')
+    print('Deze file telt ' + lineCount + ' regels')
 
 numbersList = []
 
@@ -12,13 +12,15 @@ for line in data:
 
     numbersList.append(numbers)
 
-highestNumber = max(numbersList)
+highestNumber = str(max(numbersList))
 
 f.close()
 
 with open("kaartnummers.txt") as f:
     for num, line in enumerate(f, 1):
         if highestNumber in line:
-            highestNumberLine = num
+            highestNumberLine = str(num)
 
-print('Het grootste kaartnummer is: ' + str(highestNumber) + ' en dat staat op regel ' + str(highestNumberLine))
+print('Het grootste kaartnummer is: ' + highestNumber + ' en dat staat op regel ' + highestNumberLine)
+
+f.close()
