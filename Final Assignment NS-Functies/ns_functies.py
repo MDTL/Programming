@@ -1,4 +1,5 @@
 def standaardPrijs(afstandKM):
+    'Gebruikt de ingevoerde afstand in kilometers op de standaardprijs uit te rekenen'
 
     treinritPrijs = 0.80
 
@@ -14,20 +15,32 @@ def standaardPrijs(afstandKM):
     return round(tarief, 2)
 
 def ritPrijs(leeftijd, weekendrit, afstandKM):
+    'Gebruikt de ingevoerde leeftijd, weekendrit, en afstand in kilometers op de totale ritprijs uit te rekenen'
 
     sPrijs = standaardPrijs(afstandKM)
 
-    if weekendrit == False:
+    if weekendrit:
+
         if leeftijd < 12 or leeftijd >= 65:
-            prijs = sPrijs - ((sPrijs / 100) * 30)
+
+            korting = 0.35
+
         else:
-            prijs = sPrijs
+
+            korting = 0.40
+
     else:
+
         if leeftijd < 12 or leeftijd >= 65:
-            prijs = sPrijs - ((sPrijs / 100) * 35)
+
+            korting = 0.30
+
         else:
-            prijs = sPrijs - ((sPrijs / 100) * 40)
 
-    return round(prijs, 2)
+            korting = 0
 
-print(ritPrijs(64, False, 0))
+    prijs = sPrijs - (sPrijs * korting)
+
+    print(round(prijs, 2))
+
+ritPrijs(30, True, 20)
