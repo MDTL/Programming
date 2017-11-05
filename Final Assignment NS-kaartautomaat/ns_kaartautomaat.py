@@ -1,4 +1,4 @@
-stations = ['Schagen', 'Heerhugowaard', 'Alkmaar', 'Castricum', 'Zaandam', 'Amsterdam Sloterdijk Centraal', 'Amsterdam Amstel', 'Utrecht Centraal', '\'s-Hertogenbosch', 'Eindhoven', 'Weert', 'Roermond', 'Sittard', 'Maastricht']
+stations = ['Schagen', 'Heerhugowaard', 'Alkmaar', 'Castricum', 'Zaandam', 'Amsterdam Sloterdijk Centraal', 'Amsterdam Centraal', 'Amsterdam Amstel', 'Utrecht Centraal', '\'s-Hertogenbosch', 'Eindhoven', 'Weert', 'Roermond', 'Sittard', 'Maastricht']
 
 beginstation = ""
 eindstation = ""
@@ -62,14 +62,13 @@ def omroepen_reis():
 
     ritprijs = stationsafstand * 5
 
-    tussenstationsindex = range(beginstationindex + 1, eindstationindex - 1)
-
     tussenstationslist = []
 
-    for x in tussenstationsindex:
-        tussenstationslist.append(stations[x])
+    for x in range(beginstationindex, eindstationindex - 1):
+        tussenstationslist.append('-' + stations[x])
 
-    tussenstations = ', '.join(tussenstationslist)
+    tussenstations = '\n'.join(tussenstationslist)
+
 
     print()
 
@@ -87,7 +86,7 @@ def omroepen_reis():
     print()
 
     print('Jij stapt in de trein in: ' + str(beginstation))
-    print('Tussenstations: ' + str(tussenstations))
+    print(str(tussenstations))
     print('Jij stapt uit in: ' + str(eindstation))
 
 inlezen_beginstation()
