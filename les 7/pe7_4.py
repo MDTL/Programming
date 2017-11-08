@@ -1,4 +1,5 @@
 def ticker(filename):
+    'haalt de gegevens uit het bestand op en zet deze in een dictionary'
 
     with open(filename, "r") as f:
 
@@ -23,6 +24,7 @@ def ticker(filename):
         return dict
 
 def getTickers():
+    'gebruikt de dictionary op de gegevens te laten zien.'
 
     dict = ticker('tickers.txt')
 

@@ -1,4 +1,5 @@
 def gemiddelde():
+    'reken het gemiddelde aantal letters in een zin uit'
 
     zin = input("Willekeurige zin: ")
 

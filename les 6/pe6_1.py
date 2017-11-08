@@ -1,4 +1,5 @@
 def seizoen(maand):
+    'haalt de maand op voor het gegeven nummer'
     seizoenen = ['lente', 'zomer', 'herfst', 'winter']
 
     if '1' in maand or '2' in maand or '3' in maand:

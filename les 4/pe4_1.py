@@ -1,4 +1,5 @@
 def som(x, y, z):
+    'gebruikt de ingevoerde getallen en telt dezen op'
     return x + y + z;
 
 getal1 = 10

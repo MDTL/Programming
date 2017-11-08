@@ -4,6 +4,7 @@ beginstation = ""
 eindstation = ""
 
 def inlezen_beginstation():
+    'vraagt om een beginstation en slaat deze op'
 
     while True:
 
@@ -24,6 +25,7 @@ def inlezen_beginstation():
             continue
 
 def inlezen_eindstation():
+    'Vraagt om een eindstation en en slaat deze op'
 
     while True:
 
@@ -54,6 +56,7 @@ def inlezen_eindstation():
             continue
 
 def omroepen_reis():
+    'haalt het begin en eindstation op, berekent de station nummers en de tussenstations en laat deze zien'
 
     beginstationindex = stations.index(beginstation) + 1
     eindstationindex = stations.index(eindstation) + 1

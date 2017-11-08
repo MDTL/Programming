@@ -1,48 +1,42 @@
 import csv
 
-def createcvs():
-
-    with open('producten.csv', 'w', newline='') as f:
-
+def artikels_toevoegen():
+    'Voegt de artikelen toe aan een csv bestand'
+    with open('producten.csv', 'w', newline='') as artikel:
         fieldnames = ['Artikelnummer', 'Artikelcode', 'Naam', 'Voorraad', 'Prijs']
-
-        writer = csv.DictWriter(f, delimiter=';', fieldnames=fieldnames)
+        writer = csv.DictWriter(artikel, delimiter=';', fieldnames=fieldnames)
 
         writer.writeheader()
+        writer.writerow({'Artikelnummer': 121, 'Artikelcode': 'ABC123', 'Naam': 'Highlight pen','Voorraad': 231, 'Prijs': 0.56})
+        writer.writerow({'Artikelnummer': 123, 'Artikelcode': 'PQR678', 'Naam': 'Nietmachine', 'Voorraad': 587, 'Prijs': 9.99})
+        writer.writerow({'Artikelnummer': 128, 'Artikelcode': 'ZYX163', 'Naam': 'Bureaulamp', 'Voorraad': 34, 'Prijs': 19.95})
+        writer.writerow({'Artikelnummer': 137, 'Artikelcode': 'MLK709', 'Naam': 'Monitorstandaard', 'Voorraad': 66, 'Prijs': 32.50})
+        writer.writerow({'Artikelnummer': 271, 'Artikelcode': 'TR665', 'Naam': 'Ipad hoes', 'Voorraad': 155, 'Prijs': 19.01})
 
-        writer = csv.writer(f, delimiter=';')
+artikels_toevoegen()
 
-        writer.writerow(('121', 'ACB123', 'Highlight Pen', '231', '0.56'))
-        writer.writerow(('123', 'PQR678', 'Nietmachine', '587', '9.99'))
-        writer.writerow(('128', 'ZXY163', 'Bureaulamp', '34', '19.95'))
-        writer.writerow(('137', 'MLK709', 'Monitorstandaard', '66', '32.50'))
-        writer.writerow(('271', 'TRS665', 'Ipad Hoes', '155', '19.01'))
+with open('producten.csv', 'r') as product:
+    reader = csv.DictReader(product, delimiter=';')
 
-#createcvs()
+    productList = []
+    prijsList = []
+    voorraadList= []
 
-def opencsv():
+    for row in reader:
 
-    maxPriceList = []
+        prijsList += [float(row['Prijs'])]
+        productList += [row]
+        voorraadList += [int(row['Voorraad'])]
 
-    counter = 0
+    hoogste_prijs = max(prijsList)
+    min_voorraad = min(voorraadList)
+    totale_voorraad = sum(voorraadList)
 
-    with open('producten.csv', newline='') as f:
+    for art in productList:
+        if hoogste_prijs == float(art['Prijs']):
+            print('Het duurste artikel is {} en die kost {} Euro'.format(art['Naam'], art['Prijs']))
 
-        reader = csv.reader(f, delimiter=';')
+        if min_voorraad == int(art['Voorraad']):
+            print('Er zijn slechts {} exemplaren in voorraad van het product met nummer {}'.format(art['Voorraad'], art['Artikelnummer']))
 
-        for row in reader:
-
-            price = row[4]
-
-            if counter > 0:
-
-                maxPriceList.append(price)
-
-            counter = counter + 1
-
-        maxPrice = max(map(float, maxPriceList))
-
-        print(maxPriceList)
-        print(maxPrice)
-
-opencsv()
+    print('In totaal hebben wij {} producten in ons magazijn liggen'.format(totale_voorraad))

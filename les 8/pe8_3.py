@@ -1,4 +1,5 @@
 def code(invoerstring):
+    'gebruikt de ingevoerde string en zet de letters om naar de de waarde 3 tekens hoger'
 
     newinvoerstring = ""
 

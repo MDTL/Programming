@@ -1,4 +1,5 @@
 def kwadraten_som(grondgetallen):
+    'neemt de grondgetallen list over en rekent de kwadraten hiervan uit'
     sum = 0
     for x in grondgetallen:
         if x >= 0:

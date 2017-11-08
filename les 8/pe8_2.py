@@ -1,6 +1,7 @@
 import random
 
 def monopolyworp():
+    'rolt een dobbelsteen met willekeurige getallen van 1 tot 6 en herhaalt dit als ze gelijk zijn tot 3x'
 
     eersteDobbel = [random.randint(0,6), random.randint(0,6)]
 

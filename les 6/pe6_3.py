@@ -1,4 +1,5 @@
 def function(invoer):
+    'neemt de ingevoerde getallen sorteerd deze, laat de grootste/kleinste getallen, aantal getallen, som van de getallen en het gemiddelde zien'
 
     list = invoer.split('-')
 

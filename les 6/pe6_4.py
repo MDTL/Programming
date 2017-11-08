@@ -1,6 +1,7 @@
 studentencijfers = [[95, 92, 86], [66, 75, 54], [89, 72, 100], [34, 0, 0]]
 
 def gemiddelde_per_student(studentcijfers):
+    'pakt de list van cijfers en rekent het gemiddelde per student uit'
 
     antw = []
 
@@ -17,6 +18,7 @@ def gemiddelde_per_student(studentcijfers):
     return antw
 
 def gemiddelde_van_alle_studenten(studentcijfers):
+    'rekent het gemiddelde van alle studenten uit'
 
     som = 0
     count = 0

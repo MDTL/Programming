@@ -1,4 +1,5 @@
 def namen():
+    'zet de ingevoerde namen in een list en laat zien hoevaak elke naam voor komt'
 
     list = []
 
